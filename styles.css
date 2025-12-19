@@ -348,7 +348,7 @@ main {
     border: 1px solid var(--border-color);
     
     vertical-align: top; 
-    height: 0em; /* Explicitly set height based on font size (you may need to tweak this number) */
+    height: auto; /* Explicitly set height based on font size (you may need to tweak this number) */
     /* Remove all conflicting properties */
     line-height: 1; 
     margin: 0; 
@@ -548,4 +548,16 @@ main {
     
     /* Ensure the link is aligned to the left side of this container */
     text-align: left; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+    #about-me .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
