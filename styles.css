@@ -105,7 +105,11 @@ nav ul {
     align-items: center;
     text-align: center;
     padding: 50px 20px;
-    background-color: #f7f7f0;
+    /*background-color: #f7f7f0;*/
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #hero h2 {
@@ -348,7 +352,7 @@ main {
     border: 1px solid var(--border-color);
     
     vertical-align: top; 
-    height: auto; /* Explicitly set height based on font size (you may need to tweak this number) */
+    height: 0; /* Explicitly set height based on font size (you may need to tweak this number) */
     /* Remove all conflicting properties */
     line-height: 1; 
     margin: 0; 
@@ -493,6 +497,10 @@ main {
 }
 
 #intro-quote {
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: white;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -560,4 +568,262 @@ html {
         align-items: center;
         text-align: center;
     }
+}
+
+/* --- Highlighted Projects Carousel --- */
+#highlighted-projects {
+    background-color: white;
+    padding: 80px 0;
+    overflow: hidden; /* Hide cards sliding outside the container */
+}
+
+/* --- Highlighting the Section Title --- */
+#highlighted-projects .section-title {
+    text-align: center;
+    margin: 0 auto 60px auto; /* Centering and adding bottom space */
+    position: relative;
+    display: inline-block; /* Allows the background to wrap tight to text */
+    left: 50%; /* Helper for centering inline-block */
+    transform: translateX(-50%); /* Perfectly centers the title */
+    z-index: 1;
+}
+
+#highlighted-projects .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 8px; /* Adjust height position of the stripe */
+    left: -10px; /* Extends slightly to the left */
+    width: calc(100% + 20px); /* Extends slightly to the right */
+    height: 18px; /* Thickness of the stripe */
+    background-color: var(--accent-color); /* Uses your coral/pink color */
+    opacity: 0.3; /* Makes it a soft highlight/stripe */
+    z-index: -1; /* Places stripe behind the text */
+    transform: rotate(-1deg); /* Slight tilt for a "glamorous" Gen-Z look */
+}
+
+.carousel-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out; /* Smooth slide effect */
+}
+
+.highlight-card {
+    flex: 0 0 calc(33.333% - 20px); /* 3 cards on PC */
+    min-width: 300px;
+}
+
+/* Responsive adjustment for Mobile/Tablet */
+@media (max-width: 1024px) {
+    .highlight-card {
+        flex: 0 0 calc(50% - 15px); /* 2 cards on Tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .highlight-card {
+        flex: 0 0 100%; /* 1 card on Mobile */
+    }
+}
+
+/* --- Facebook Style Photo Grid --- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* แบ่งเป็น 2 ส่วน: ส่วนใหญ่และส่วนย่อย */
+    grid-template-rows: 200px 200px; /* กำหนดความสูง 2 แถว */
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* รูปที่ 1 ให้ขยายเต็มความสูงทั้ง 2 แถว */
+.photo-item:first-child {
+    grid-row: span 2;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05); /* เอฟเฟกต์ซูมเมื่อเอาเมาส์ไปวาง */
+}
+
+/* สไตล์สำหรับรูปสุดท้ายที่มีตัวเลข +X */
+.more-photos {
+    position: relative;
+}
+
+.more-photos::after {
+    content: attr(data-more); /* ดึงค่ามาจาก data-more ใน HTML */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* เลเยอร์สีดำจางๆ */
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.more-photos:hover::after {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* สำหรับมือถือ: ปรับให้แสดงเป็น 1 คอลัมน์เพื่อให้รูปไม่เล็กเกินไป */
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 150px 150px;
+    }
+    .photo-item:first-child {
+        grid-row: span 1;
+    }
+}
+
+/* --- Photo Grid --- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.photo-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.photo-item:first-child { grid-row: span 2; }
+.photo-item.hidden { display: none; } /* Only show first 3 in grid */
+
+.photo-item img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+/* +Number Overlay on 3rd Image */
+.photo-item:nth-child(3) { position: relative; }
+.photo-item.has-more::after {
+    content: attr(data-more);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; font-weight: bold; font-family: var(--font-heading);
+}
+
+/* --- Modal/Lightbox Styling --- */
+.modal {
+    display: none; position: fixed; z-index: 2000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); 
+    align-items: center; 
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: auto; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-content-wrapper { position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    margin: auto;
+ }
+
+#modal-img { display: block; width: auto; height: auto;
+    max-height: 85vh; 
+    max-width: 90%;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    /* 🛑 Standard cursor for images that can be zoomed by the browser */
+    cursor: zoom-in; 
+    transition: transform 0.3s ease; 
+    flex-shrink: 0;
+    
+}
+
+.close-modal { 
+    position: fixed; 
+    top: 25px; 
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer; 
+    z-index: 2200;
+    background: rgba(0, 0, 0, 0.4);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 1;
+}
+.modal-prev, .modal-next {
+    z-index: 2100;
+    position: fixed;
+    top: 50%; 
+    transform: translateY(-50%);
+
+    background: rgba(0, 0, 0, 0.5); 
+    border: none; 
+    border-radius: 50%;
+    color: white; 
+    font-size: 2.5rem; 
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.modal-prev { left: 20px; }
+.modal-next { right: 20px; }
+.modal-prev:hover, .modal-next:hover {
+    background: rgba(255, 60, 112, 0.8); /* Uses your --accent-color */
+    color: white;
+}
+.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out !important;
+}
+
+#modal-img.zoomed {
+    max-height: none; 
+    max-width: 95%;
+
+    transform: scale(1.1); /* Adjust scale as needed */
+    cursor: zoom-out;
+    margin: 50px auto;
 }
