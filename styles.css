@@ -403,6 +403,7 @@ main {
     
     /* Ensure color is the primary text color */
     color: var(--primary-text);
+    font-family: 'Gaegu', cursive;
 }
 
 /* Ensure the main tag is also clean */
