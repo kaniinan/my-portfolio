@@ -978,3 +978,76 @@ body.modal-open {
         transform: translateY(-5px); /* Reduce tilt on small screens */
     }
 }
+
+/* --- Mobile Responsive Fixes (Screen width < 768px) --- */
+@media (max-width: 768px) {
+    /* 1. Navigation: Stack the menu or make it wrap */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        gap: 15px;
+        font-size: 1.2rem; /* Slightly smaller for mobile */
+    }
+
+    /* 2. Hero Section: Adjust font sizes */
+    #hero h2 {
+        font-size: 2.5rem; /* Stop text from being too giant */
+    }
+    
+    #hero p {
+        font-size: 1.3rem;
+    }
+
+    /* 3. About Me: The overlapping image needs space */
+    #about-me .about-content {
+        margin-top: 80px;
+        padding: 50px 20px 30px 20px;
+    }
+
+    #about-me .profile-img {
+        width: 150px; /* Smaller profile pic for small screens */
+        height: 150px;
+        top: -75px; /* Half of new height */
+    }
+
+    /* 4. Carousel: Show only 1 card at a time */
+    .highlight-card {
+        flex: 0 0 100%;
+    }
+
+    /* 5. Photos: Ensure the Facebook-style grid stacks */
+    .photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .photo-item:first-child {
+        grid-row: span 1;
+        height: 250px;
+    }
+
+    /* 6. Modals: Make UI buttons smaller so they don't block the art */
+    .modal-prev, .modal-next {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+    
+    .close-modal {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+}
+
+#modal-img.zoomed {
+    width: 100vw; /* Fits perfectly to phone width */
+    max-width: 100%; 
+    height: auto;
+    cursor: zoom-out;
+}
