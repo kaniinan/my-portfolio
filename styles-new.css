@@ -1,0 +1,920 @@
+/* * 🎨 Gen-Z Minimal Styling 
+ * Key Principles: High-contrast, Mono/Duo-tone palette, Bold typography, Clean lines.
+ */
+/* Update your CSS import at the very top of styles.css */
+/*@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;600&family=Kanit:wght@400;700&family=Lora:ital,wght@1,600&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Itim&display=swap');
+
+/*
+:root {*/
+    /* Color Palette */
+   /* --primary-text: #1a1a1a;        /* Near-black for contrast */
+    /*--secondary-bg: #f7f7f7;        /* Off-white, soft background */
+    /*--accent-color: #ff3c70;        /* Punchy Coral/Pink for action items */
+    /*--border-color: #e0e0e0;        /* Subtle border lines */
+
+    /* Typography */
+    /*--font-heading: 'Space Grotesk', 'Kanit', sans-serif;
+    --font-body: 'Inter', 'Kanit', sans-serif;
+    --font-tag: 'Lora', serif;
+    
+    /* Layout */
+    /*--max-width: 1200px;
+}*/
+
+:root {
+    /* Playful Typography */
+    --portfolio-font: 'Gaegu', 'Itim', cursive;
+    --font-heading: 'Gaegu', 'Itim', cursive; /* Playful and rounded */
+    --font-body: , 'Itim', cursive; /* Clear but handwritten */
+    --font-tag: 'Itim', cursive;
+    
+    /* Keep other layout variables ... */
+    --max-width: 1200px;
+    --accent-color: #ff3c70;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    background-color: white;
+    color: var(--primary-text);
+    line-height: 1.5;
+    transition: none;
+}
+
+h1, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-text);
+    margin-top: 0;
+}
+
+h2, p {
+  font-family: var(--portfolio-font);
+  
+  /* 2. The Magic Trick: font-size-adjust */
+  /* This scales the lowercase 'x' height. 
+     Try values between 0.45 and 0.55 to make Gaegu match Itim's visual weight. */
+  font-size-adjust: 0.5;
+
+  /* 3. Smooth the rendering for handwriting fonts */
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6; /* Thai characters need extra vertical space */
+}
+
+/* Specific adjustment for Bold Gaegu if it looks too small */
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em; /* Tightens Gaegu to match Itim's density */
+}
+
+/* Links & Buttons */
+a {
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: color 0.3s, opacity 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/*.cta-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 28px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e63565; 
+    color: white;
+}*/
+.cta-button {
+    /* Apply the playful heading font */
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    
+    background-color: var(--accent-color);
+    color: white;
+    padding: 14px 32px;
+    
+    /* 🎨 Playful Hand-Drawn Look */
+    /* Irregular corners make it look like a hand-drawn sketch */
+    border-radius: 25px 50px 20px 45px; 
+    border: 2px solid var(--primary-text); /* Darker border for an "ink" feel */
+    
+    text-transform: none; /* Removed uppercase to keep it friendly/handwritten */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    
+    /* Transition for both color and physical movement */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #e63565; 
+    color: white;
+    /* 🎨 Interactive Doodle Effect */
+    /* Tilts and grows slightly when hovered */
+    transform: scale(1.05) rotate(2deg); 
+    box-shadow: 4px 4px 0px var(--primary-text); /* Hard shadow like a comic/doodle */
+}
+
+/* Header & Navigation */
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 15px;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    /*background-color: #f7f7f0;*/
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#hero h2 {
+    font-size: clamp(2rem, 5vw, 4.5rem); /* Responsive, large heading */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Styling for the overall section container (to apply max-width and center it) */
+#portfolio {
+    margin: 0;
+    padding: 40px 0;
+    background-color: #f7f7f0;
+}
+
+/* Styling for the Category Grid and Project List (NOW targets only the grid layout) */
+.category-grid, .project-list {
+    max-width: var(--max-width); 
+    margin: 0 auto;
+    padding: 0 20px; /* Internal padding for the grid items */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/*.category-card, .project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}*/
+.category-card, .project-card {
+    background: white;
+    
+    /* 🎨 Playful Hand-Drawn Look */
+    /* Irregular border-radius makes the cards look like hand-cut paper or sketches */
+    border-radius: 15px 25px 12px 30px; 
+    
+    /* Thicker, darker border to mimic an ink pen line */
+    border: 2px solid var(--primary-text); 
+    
+    overflow: hidden;
+    
+    /* 🎨 "Doodle" Shadow */
+    /* Switched from a soft glow to a hard, solid offset shadow */
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1); 
+    
+    /* Smooth transition for both the lift and the shadow movement */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.category-card:hover, .project-card:hover {
+    /* Lift the card and tilt it slightly to feel more "alive" */
+    transform: translateY(-10px) rotate(-1deg);
+    
+    /* Push the shadow further out as the card "lifts" */
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+.category-card:hover, .project-card:hover {
+    transform: translateY(-8px); /* More noticeable hover lift */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- Card Anchor Style --- */
+.category-card a {
+    display: block;
+    padding-bottom: 0; /* Ensures the new h4 styling fits */
+    color: var(--primary-text);
+}
+
+.project-card a {
+    display: block;
+    /* 🛑 CRITICAL FIX: Eliminates extra space reserved by the anchor tag */
+    line-height: normal; 
+    
+    /* Keep the bottom padding needed for space below the description (p) */
+    padding-bottom: 20px; 
+    color: var(--primary-text);
+}
+
+.category-card img, .project-card img {
+    width: 100%;
+    /* Use a visually striking aspect ratio */
+    aspect-ratio: 4/3; 
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.category-card h4, .project-card h3, .project-card p {
+    padding: 0 20px;
+}
+
+.category-card h4, .project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #666; /* Light gray for secondary text */
+    margin-top: 5px; /* Add slight space above the paragraph */
+}
+
+/* Individual Project Detail Page */
+.project-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px 20px;
+}
+
+.project-detail h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.meta {
+    color: #999;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+}
+
+.main-media {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main-media iframe {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+/* Individual Project Detail Page (Add these rules) */
+
+.inline-graphic {
+    /* Ensures the figure respects the content area and adds vertical margin */
+    margin: 40px auto; 
+    text-align: center; /* Centers the image and the caption */
+}
+
+.inline-graphic img {
+    /* 🛑 Key Fix: Limits the image size to 100% of its container width */
+    max-width: 100%;
+    
+    /* Ensures the image maintains its proportions without distortion */
+    height: auto; 
+    
+    /* Adds a subtle border radius to match the Gen-Z aesthetic */
+    border-radius: 8px; 
+    
+    /* Removes any default spacing below the image */
+    display: block; 
+    margin: 0 auto; /* Ensures image block is centered */
+}
+
+.inline-graphic figcaption {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+.narrative h3 {
+    margin-top: 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color); /* Subtle divider */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    background-color: var(--primary-text);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Featured Categories Heading Spacing */
+#portfolio h3 {
+    max-width: var(--max-width);
+    text-align: center; /* Center the heading for balance with the Hero section */
+    font-size: 2rem;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
+}
+
+/* Styling for the Back Link on category pages */
+.back-link {
+    display: inline-block; /* Allows margins and padding */
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-text); /* Use primary text color */
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--accent-color); /* Highlight with accent color on hover */
+    text-decoration: underline;
+}
+
+/* Ensure the back link is aligned with the main content container */
+.project-list + .back-link {
+    /* If the back link is below the project list, give it some top margin */
+    margin-top: 40px; 
+}
+
+/* Adjust the main content to position the back link well */
+main {
+    padding-top: 20px;
+    transition: background-color 0.8s ease-in-out;
+}
+
+/* --- Project Tags Styling (Gen-Z Minimal) --- */
+
+/* 1. Container for tags */
+.project-tags {
+    /* Aligns the tags with the card content */
+    padding: 0 9px; 
+    margin-bottom: 2px; /* Space between tags and the description paragraph */
+    margin-top: -20px;
+    display: flex; /* Allows tags to sit next to each other */
+    flex-wrap: wrap; /* Wraps tags to the next line if too many */
+    gap: 10px; /* Space between individual tags */
+}
+
+/* 2. Individual Tag Styling (FINAL ATTEMPT: Using inline-flex for control) */
+.project-tag {
+    /* 🛑 CRITICAL FIX: Forces element to size tightly around content */
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center; /* Centers the text vertically within the box */
+
+    /* Typography - Keep it small and bold for contrast */
+    font-family: var(--font-body); /* Using Inter/Kanit for clean look */
+    font-size: 0.75rem;
+    font-weight: 700; /* Bold font for distinction */
+    text-transform: uppercase;
+    text-decoration: none;
+
+    /* Box Appearance (Minimal) */
+    background-color: #e6e6e6; 
+    color: var(--primary-text);
+    padding: 4px 10px; /* Standard, tight padding */
+    border-radius: 6px; /* Rounded corners */
+    border: 1px solid var(--border-color);
+    
+    vertical-align: top; 
+    height: 0; /* Explicitly set height based on font size (you may need to tweak this number) */
+    /* Remove all conflicting properties */
+    line-height: 1; 
+    margin: 0; 
+    
+    /* Hover effect */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.project-tag:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* --- Styling for Category Page Headings --- */
+
+/* Primary Category Title (H2) - Minimal & Comfy/Gen Z Pop-Out */
+.category-heading {
+    max-width: var(--max-width);
+    
+    /* 🛑 NEW: Generous Vertical Spacing (Comfy/Clean look) */
+    margin: 80px auto 40px auto; 
+    
+    padding: 0 20px;
+    
+    /* 🛑 NEW: Large, Dominant Font (Statement look) */
+    /* Use a larger clamp range to make it feel deliberate and modern */
+    font-size: clamp(2.5rem, 5vw, 4rem); 
+    font-weight: 700; 
+    text-align: center; 
+    
+    /* REMOVALS: Remove all borders and shadows */
+    border-bottom: none; /* No more thick lines */
+    text-shadow: none;
+    
+    /* Ensure color is the primary text color */
+    color: var(--primary-text);
+}
+
+/* Ensure the main tag is also clean */
+main {
+    padding-top: 0; /* Remove padding if added previously */
+}
+
+/* Secondary/Nested Heading (e.g., "Project Groups", "All Projects") */
+.nested-heading {
+    /* Uses h3 style, but we add more spacing for visual separation */
+    max-width: var(--max-width);
+    margin: 40px auto 20px auto; /* 🛑 Added more margin for separation */
+    padding: 0 20px;
+    font-size: 1.8rem; /* Slightly smaller than h2 but larger than h4 */
+    font-weight: 700;
+    text-align: left; /* Left-align the nested section titles */
+}
+
+/* Ensure the category grid section has the correct margins */
+#nested-categories, #all-uni-projects {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Global Styling for Major Sections (Ensures Centering and Max-Width) --- */
+#intro-quote, #about-me, #contact-section {
+    margin: 0;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    /* Uses the same style as the comfy/Gen-Z category heading (H2) for visual weight */
+    font-size: clamp(2rem, 4vw, 3rem); 
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* --- 2. INTRO/QUOTE SECTION --- */
+#intro-quote blockquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-style: italic;
+    color: var(--primary-text);
+    border-left: 5px solid var(--accent-color); /* Subtle accent line */
+    margin: 0 auto 15px auto;
+    max-width: 700px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+#intro-quote p {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: right;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 3. ABOUT ME SECTION --- */
+#about-me .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+#about-me .profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular profile picture is minimal and friendly */
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+#about-me p {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-top: 0;
+}
+
+/* --- 4. CONTACT SECTION --- */
+#contact-section {
+    margin-bottom: 100px; /* Extra space before the footer */
+    text-align: center;
+}
+
+.contact-details {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- Custom Text Selection/Highlight Color --- */
+::selection {
+    /* Background color of the highlight (Coral/Peach) */
+    background: var(--accent-color); 
+    
+    /* Text color when highlighted (White for high contrast) */
+    color: white; 
+}
+
+#intro-quote {
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* 🆕 3. About Me Section: Slightly Warm Tone */
+#about-me {
+    background-color: white;
+        padding-top: 50px;
+    padding-bottom: 50px; /* Very light, warm gray/cream */
+}
+
+/* 🆕 4. Contact Section: Light Accent Tone */
+#contact-section {
+    background-color: #f7f7f0;
+        padding-top: 50px;
+    padding-bottom: 50px; /* Extremely light pink/peach based on accent color */
+}
+
+/* --- Glamorous Shadow for Content Blocks --- */
+
+/* Example: The Quote Block inside the Intro section */
+#intro-quote .intro-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    /* 🛑 GLAMOUR: Subtle, soft shadow for depth */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+}
+
+/* Example: The About Me Content Block */
+#about-me .about-content {
+    /* Ensure the content container has a white background to contrast with the section */
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 🆕 NEW: Centering Container for Section Content */
+.intro-content, .about-content, .contact-details {
+    max-width: 900px; /* Set your max content width here */
+    margin: 0 auto; /* Center the content inside the full-width section */
+    padding: 0 20px; /* Add internal padding for content */
+}
+
+/* --- Alignment for Back Link Wrapper --- */
+.content-wrapper {
+    /* Set the same constraints as the project-list and category-grid */
+    max-width: var(--max-width);
+    margin: 40px auto 60px auto; /* 40px space above, 60px space below main content */
+    padding: 0 20px; /* Add internal padding to match grid padding */
+    
+    /* Ensure the link is aligned to the left side of this container */
+    text-align: left; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+    #about-me .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* --- Highlighted Projects Carousel --- */
+#highlighted-projects {
+    background-color: white;
+    padding: 80px 0;
+    overflow: hidden; /* Hide cards sliding outside the container */
+}
+
+/* --- Highlighting the Section Title --- */
+#highlighted-projects .section-title {
+    text-align: center;
+    margin: 0 auto 60px auto; /* Centering and adding bottom space */
+    position: relative;
+    display: inline-block; /* Allows the background to wrap tight to text */
+    left: 50%; /* Helper for centering inline-block */
+    transform: translateX(-50%); /* Perfectly centers the title */
+    z-index: 1;
+}
+
+#highlighted-projects .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 8px; /* Adjust height position of the stripe */
+    left: -10px; /* Extends slightly to the left */
+    width: calc(100% + 20px); /* Extends slightly to the right */
+    height: 18px; /* Thickness of the stripe */
+    background-color: var(--accent-color); /* Uses your coral/pink color */
+    opacity: 0.3; /* Makes it a soft highlight/stripe */
+    z-index: -1; /* Places stripe behind the text */
+    transform: rotate(-1deg); /* Slight tilt for a "glamorous" Gen-Z look */
+}
+
+.carousel-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out; /* Smooth slide effect */
+}
+
+.highlight-card {
+    flex: 0 0 calc(33.333% - 20px); /* 3 cards on PC */
+    min-width: 300px;
+}
+
+/* Responsive adjustment for Mobile/Tablet */
+@media (max-width: 1024px) {
+    .highlight-card {
+        flex: 0 0 calc(50% - 15px); /* 2 cards on Tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .highlight-card {
+        flex: 0 0 100%; /* 1 card on Mobile */
+    }
+}
+
+/* --- Facebook Style Photo Grid --- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* แบ่งเป็น 2 ส่วน: ส่วนใหญ่และส่วนย่อย */
+    grid-template-rows: 200px 200px; /* กำหนดความสูง 2 แถว */
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* รูปที่ 1 ให้ขยายเต็มความสูงทั้ง 2 แถว */
+.photo-item:first-child {
+    grid-row: span 2;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05); /* เอฟเฟกต์ซูมเมื่อเอาเมาส์ไปวาง */
+}
+
+/* สไตล์สำหรับรูปสุดท้ายที่มีตัวเลข +X */
+.more-photos {
+    position: relative;
+}
+
+.more-photos::after {
+    content: attr(data-more); /* ดึงค่ามาจาก data-more ใน HTML */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* เลเยอร์สีดำจางๆ */
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.more-photos:hover::after {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* สำหรับมือถือ: ปรับให้แสดงเป็น 1 คอลัมน์เพื่อให้รูปไม่เล็กเกินไป */
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 150px 150px;
+    }
+    .photo-item:first-child {
+        grid-row: span 1;
+    }
+}
+
+/* --- Photo Grid --- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.photo-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.photo-item:first-child { grid-row: span 2; }
+.photo-item.hidden { display: none; } /* Only show first 3 in grid */
+
+.photo-item img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+/* +Number Overlay on 3rd Image */
+.photo-item:nth-child(3) { position: relative; }
+.photo-item.has-more::after {
+    content: attr(data-more);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; font-weight: bold; font-family: var(--font-heading);
+}
+
+/* --- Modal/Lightbox Styling --- */
+.modal {
+    display: none; position: fixed; z-index: 2000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); 
+    align-items: center; 
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: auto; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-content-wrapper { position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    margin: auto;
+ }
+
+#modal-img { display: block; width: auto; height: auto;
+    max-height: 85vh; 
+    max-width: 90%;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    /* 🛑 Standard cursor for images that can be zoomed by the browser */
+    cursor: zoom-in; 
+    transition: transform 0.3s ease; 
+    flex-shrink: 0;
+    
+}
+
+.close-modal { 
+    position: fixed; 
+    top: 25px; 
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer; 
+    z-index: 2200;
+    background: rgba(0, 0, 0, 0.4);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 1;
+}
+.modal-prev, .modal-next {
+    z-index: 2100;
+    position: fixed;
+    top: 50%; 
+    transform: translateY(-50%);
+
+    background: rgba(0, 0, 0, 0.5); 
+    border: none; 
+    border-radius: 50%;
+    color: white; 
+    font-size: 2.5rem; 
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.modal-prev { left: 20px; }
+.modal-next { right: 20px; }
+.modal-prev:hover, .modal-next:hover {
+    background: rgba(255, 60, 112, 0.8); /* Uses your --accent-color */
+    color: white;
+}
+.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out !important;
+}
+
+#modal-img.zoomed {
+    max-height: none; 
+    max-width: 95%;
+
+    transform: scale(1.1); /* Adjust scale as needed */
+    cursor: zoom-out;
+    margin: 50px auto;
+}

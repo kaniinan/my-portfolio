@@ -2,35 +2,22 @@
  * Key Principles: High-contrast, Mono/Duo-tone palette, Bold typography, Clean lines.
  */
 /* Update your CSS import at the very top of styles.css */
-/*@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;600&family=Kanit:wght@400;700&family=Lora:ital,wght@1,600&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Mali:ital,wght@0,300;0,400;0,700;1,400&family=Patrick+Hand&family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;600&family=Kanit:wght@400;700&family=Lora:ital,wght@1,600&display=swap');
 /* ... rest of the CSS file ... */
-/*
-:root {*/
+:root {
     /* Color Palette */
-   /* --primary-text: #1a1a1a;        /* Near-black for contrast */
-    /*--secondary-bg: #f7f7f7;        /* Off-white, soft background */
-    /*--accent-color: #ff3c70;        /* Punchy Coral/Pink for action items */
-    /*--border-color: #e0e0e0;        /* Subtle border lines */
+    --primary-text: #1a1a1a;        /* Near-black for contrast */
+    --secondary-bg: #f7f7f7;        /* Off-white, soft background */
+    --accent-color: #ff3c70;        /* Punchy Coral/Pink for action items */
+    --border-color: #e0e0e0;        /* Subtle border lines */
 
     /* Typography */
-    /*--font-heading: 'Space Grotesk', 'Kanit', sans-serif;
+    --font-heading: 'Space Grotesk', 'Kanit', sans-serif;
     --font-body: 'Inter', 'Kanit', sans-serif;
     --font-tag: 'Lora', serif;
     
     /* Layout */
-    /*--max-width: 1200px;
-}*/
-
-:root {
-    /* Playful Typography */
-    --font-heading: 'Gaegu', 'Mali', cursive; /* Playful and rounded */
-    --font-body: 'Patrick Hand', 'Mali', cursive; /* Clear but handwritten */
-    --font-tag: 'Mali', cursive;
-    
-    /* Keep other layout variables ... */
     --max-width: 1200px;
-    --accent-color: #ff3c70;
 }
 
 /* Base Styles */
@@ -60,12 +47,12 @@ a:hover {
     color: var(--accent-color);
 }
 
-/*.cta-button {
+.cta-button {
     background-color: var(--accent-color);
     color: white;
     padding: 12px 28px;
     border: 2px solid var(--accent-color);
-    border-radius: 50px;
+    border-radius: 50px; /* Rounded pill shape is trendy */
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
@@ -74,45 +61,13 @@ a:hover {
 }
 
 .cta-button:hover {
-    background-color: #e63565; 
+    background-color: #e63565; /* Slightly darker hover */
     color: white;
-}*/
-.cta-button {
-    /* Apply the playful heading font */
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    
-    background-color: var(--accent-color);
-    color: white;
-    padding: 14px 32px;
-    
-    /* 🎨 Playful Hand-Drawn Look */
-    /* Irregular corners make it look like a hand-drawn sketch */
-    border-radius: 25px 50px 20px 45px; 
-    border: 2px solid var(--primary-text); /* Darker border for an "ink" feel */
-    
-    text-transform: none; /* Removed uppercase to keep it friendly/handwritten */
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    
-    /* Transition for both color and physical movement */
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-}
-
-.cta-button:hover {
-    background-color: #e63565; 
-    color: white;
-    /* 🎨 Interactive Doodle Effect */
-    /* Tilts and grows slightly when hovered */
-    transform: scale(1.05) rotate(2deg); 
-    box-shadow: 4px 4px 0px var(--primary-text); /* Hard shadow like a comic/doodle */
 }
 
 /* Header & Navigation */
 header {
-    background: white;
+    background: rgb(255, 255, 255);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -125,12 +80,13 @@ nav {
     align-items: center;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 1rem 15px;
+    padding: 1rem 1px;
 }
 
 nav h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
+    font-family: 'Gaegu', cursive;
 }
 
 nav ul {
@@ -139,6 +95,9 @@ nav ul {
     gap: 30px;
     padding: 0;
     margin: 0;
+    font-family: 'Gaegu', cursive;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 /* Hero Section */
@@ -155,6 +114,8 @@ nav ul {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    font-family: 'Gaegu', cursive;
 }
 
 #hero h2 {
@@ -162,19 +123,25 @@ nav ul {
     font-weight: 700;
     margin-bottom: 1rem;
     max-width: 800px;
+    font-family: 'Gaegu', cursive;
 }
 
 #hero p {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     color: #666;
     margin-bottom: 2rem;
+    font-family: 'Gaegu', cursive;
 }
 
 /* Styling for the overall section container (to apply max-width and center it) */
 #portfolio {
     margin: 0;
     padding: 40px 0;
-    background-color: #f7f7f0;
+    /*background-color: #f7f7f0;*/
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    
+    background-repeat: no-repeat;
 }
 
 /* Styling for the Category Grid and Project List (NOW targets only the grid layout) */
@@ -187,40 +154,14 @@ nav ul {
     gap: 40px;
 }
 
-/*.category-card, .project-card {
+.category-card, .project-card {
     background: white;
     border-radius: 12px;
     overflow: hidden;
+    /* Minimal shadow, emphasizing structure over heavy effects */
     box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-}*/
-.category-card, .project-card {
-    background: white;
-    
-    /* 🎨 Playful Hand-Drawn Look */
-    /* Irregular border-radius makes the cards look like hand-cut paper or sketches */
-    border-radius: 15px 25px 12px 30px; 
-    
-    /* Thicker, darker border to mimic an ink pen line */
-    border: 2px solid var(--primary-text); 
-    
-    overflow: hidden;
-    
-    /* 🎨 "Doodle" Shadow */
-    /* Switched from a soft glow to a hard, solid offset shadow */
-    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1); 
-    
-    /* Smooth transition for both the lift and the shadow movement */
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-}
-
-.category-card:hover, .project-card:hover {
-    /* Lift the card and tilt it slightly to feel more "alive" */
-    transform: translateY(-10px) rotate(-1deg);
-    
-    /* Push the shadow further out as the card "lifts" */
-    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
 }
 
 .category-card:hover, .project-card:hover {
@@ -355,9 +296,10 @@ footer {
 #portfolio h3 {
     max-width: var(--max-width);
     text-align: center; /* Center the heading for balance with the Hero section */
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0 auto 20px auto;
     padding: 0 20px;
+    font-family: 'Gaegu', cursive;
 }
 
 /* Styling for the Back Link on category pages */
@@ -493,12 +435,13 @@ main {
     text-align: center;
 }
 
-.section-title {
+/*.section-title {*/
     /* Uses the same style as the comfy/Gen-Z category heading (H2) for visual weight */
-    font-size: clamp(2rem, 4vw, 3rem); 
+    /*font-size: clamp(2rem, 4vw, 3rem); 
     font-weight: 700;
     margin-bottom: 40px;
-}
+    font-family: 'Gaegu', cursive;
+}*/
 
 /* --- 2. INTRO/QUOTE SECTION --- */
 #intro-quote blockquote {
@@ -522,35 +465,61 @@ main {
 }
 
 /* --- 3. ABOUT ME SECTION --- */
+#about-me {
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 #about-me .about-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: flex-start;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;    /* Center everything horizontally */
     text-align: left;
+    
+    background-color: white;
+    padding: 60px 40px 40px 40px; /* Extra top padding to make room for the overlapping image */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    
+    /* This ensures the box height wraps perfectly around the content */
+    height: auto; 
+    position: relative;
+    margin-top: 100px; /* Create space for the image to "pop up" into */
 }
+
 
 #about-me .profile-img {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 50%; /* Circular profile picture is minimal and friendly */
-    border: 3px solid white;
+    border-radius: 50%;
+    border: 5px solid rgb(248, 217, 217); /* Thicker border for better "pop" against the line */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    
+    /* 🛑 POSITIONING FIX: Moves image to the middle of the top line */
+    position: absolute;
+    top: -100px; /* Pulls half the image (100px) above the top border */
+    left: 50%;
+    transform: translateX(-50%);
+    
     flex-shrink: 0;
+    z-index: 2;
 }
 
 #about-me p {
-    flex-grow: 1;
     font-size: 1.1rem;
     line-height: 1.7;
-    margin-top: 0;
+    margin-top: 20px; /* Space between the image area and text */
+    width: 100%;     /* Ensures text uses the full width of the wrapper */
 }
 
 /* --- 4. CONTACT SECTION --- */
 #contact-section {
     margin-bottom: 100px; /* Extra space before the footer */
     text-align: center;
+    
 }
 
 .contact-details {
@@ -587,7 +556,7 @@ main {
 /* 🆕 4. Contact Section: Light Accent Tone */
 #contact-section {
     background-color: #f7f7f0;
-        padding-top: 50px;
+    padding-top: 50px;
     padding-bottom: 50px; /* Extremely light pink/peach based on accent color */
 }
 
@@ -643,33 +612,49 @@ html {
 
 /* --- Highlighted Projects Carousel --- */
 #highlighted-projects {
-    background-color: white;
+    /*background-color: white;*/
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     padding: 80px 0;
     overflow: hidden; /* Hide cards sliding outside the container */
 }
 
 /* --- Highlighting the Section Title --- */
-#highlighted-projects .section-title {
+/* --- Corrected Highlighting for all Major Sections --- */
+#highlighted-projects .section-title,
+#about-me .section-title,
+#contact-section .section-title {
     text-align: center;
-    margin: 0 auto 60px auto; /* Centering and adding bottom space */
+    /* 🛑 The Key Change: display table + margin auto centers perfectly */
+    display: table; 
+    margin: 0 auto 60px auto; 
     position: relative;
-    display: inline-block; /* Allows the background to wrap tight to text */
-    left: 50%; /* Helper for centering inline-block */
-    transform: translateX(-50%); /* Perfectly centers the title */
     z-index: 1;
+    font-family: 'Gaegu', cursive;
+    font-size: 3rem;
+    
+    /* 🛑 Reset previous centering hacks to prevent right-shifting */
+    left: 0;
+    transform: none;
 }
 
-#highlighted-projects .section-title::after {
+/* Creating the stripe effect for all three sections */
+#highlighted-projects .section-title::after,
+#about-me .section-title::after,
+#contact-section .section-title::after {
     content: "";
     position: absolute;
-    bottom: 8px; /* Adjust height position of the stripe */
-    left: -10px; /* Extends slightly to the left */
-    width: calc(100% + 20px); /* Extends slightly to the right */
-    height: 18px; /* Thickness of the stripe */
-    background-color: var(--accent-color); /* Uses your coral/pink color */
-    opacity: 0.3; /* Makes it a soft highlight/stripe */
-    z-index: -1; /* Places stripe behind the text */
-    transform: rotate(-1deg); /* Slight tilt for a "glamorous" Gen-Z look */
+    bottom: 8px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: 30px;
+    background-color: var(--accent-color);
+    opacity: 0.3;
+    z-index: -1;
+    transform: rotate(-1deg);
 }
 
 .carousel-container {
@@ -897,4 +882,99 @@ body.modal-open {
     transform: scale(1.1); /* Adjust scale as needed */
     cursor: zoom-out;
     margin: 50px auto;
+}
+
+/* --- Art Gallery Specific Styles (Pinterest/Masonry Style) --- */
+.gallery-page {
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 🛑 Makes the background stay still while you scroll through art */
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensures the background covers the full screen height */
+}
+
+.gallery-intro {
+    text-align: center;
+    font-family: 'Gaegu', cursive;
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.art-gallery-grid {
+    display: block; /* 🛑 Switch to block for column-count layout */
+    column-count: 3; /* 3 columns on desktop */
+    column-gap: 20px;
+    max-width: var(--max-width);
+    margin: 0 auto 100px auto;
+    padding: 20px;
+}
+
+.art-piece {
+    display: inline-block; /* 🛑 Required for column layout to prevent splitting */
+    width: auto;
+    margin-bottom: 25px; /* Space between stacked images */
+    position: relative;
+    border: 2px solid var(--primary-text);
+    border-radius: 12px;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: zoom-in;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: auto; /* 🛑 Let height be natural */
+}
+
+.art-piece img {
+    width: 100%;
+    height: auto; /* 🛑 Shows full original proportions */
+    display: block;
+    border-radius: 10px;
+}
+
+/* Hover overlay for the art title */
+.art-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'Gaegu', cursive;
+    font-size: 1.2rem;
+    pointer-events: none; /* Allows click to pass through to the image */
+}
+
+.art-piece:hover {
+    transform: translateY(-8px) rotate(-1deg); /* Playful doodle tilt */
+    box-shadow: 10px 10px 0px var(--accent-color);
+}
+
+.art-piece:hover .art-info {
+    opacity: 1;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet View */
+@media (max-width: 900px) {
+    .art-gallery-grid { 
+        column-count: 2; 
+    }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .art-gallery-grid { 
+        column-count: 1; 
+    }
+    .art-piece:hover {
+        transform: translateY(-5px); /* Reduce tilt on small screens */
+    }
 }
