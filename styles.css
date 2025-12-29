@@ -8,7 +8,7 @@
     /* Color Palette */
     --primary-text: #1a1a1a;        /* Near-black for contrast */
     --secondary-bg: #f7f7f7;        /* Off-white, soft background */
-    --accent-color: #ff3c70;        /* Punchy Coral/Pink for action items */
+    --accent-color: #0d98ba;        /* Punchy Coral/Pink for action items */
     --border-color: #e0e0e0;        /* Subtle border lines */
 
     /* Typography */
@@ -61,7 +61,7 @@ a:hover {
 }
 
 .cta-button:hover {
-    background-color: #e63565; /* Slightly darker hover */
+    background-color: #078cad; /* Slightly darker hover */
     color: white;
 }
 
@@ -556,7 +556,7 @@ main {
 
 /* 🆕 4. Contact Section: Light Accent Tone */
 #contact-section {
-    background-color: #f7f7f0;
+    background-color: #e7f5f8;
     padding-top: 50px;
     padding-bottom: 50px; /* Extremely light pink/peach based on accent color */
 }
@@ -868,7 +868,7 @@ body.modal-open {
 .modal-prev { left: 20px; }
 .modal-next { right: 20px; }
 .modal-prev:hover, .modal-next:hover {
-    background: rgba(255, 60, 112, 0.8); /* Uses your --accent-color */
+    background: #0d98ba; /* Uses your --accent-color */
     color: white;
 }
 .zoomed {
