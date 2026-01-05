@@ -136,3 +136,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const videoContainers = document.querySelectorAll('.video-lazyload');
+
+    videoContainers.forEach(container => {
+        container.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            
+            // 🛑 Fix for Error 153: Redirect to YouTube
+            // This bypasses all embedding restrictions and works for any video/short.
+            const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+            
+            // Open in a new tab so they don't leave your portfolio
+            window.open(youtubeUrl, '_blank');
+        });
+    });
+});
