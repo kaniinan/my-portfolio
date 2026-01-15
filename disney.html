@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-TH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Projects | Kaniinan Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <h1>Kaniinan.</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li> <li><a href="index.html#about-me">About</a></li>
+                <li><a href="index.html#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-detail">
+        <article>
+            <a href="uni-other.html" class="back-link">
+                ← Back to Other Projects</a>
+            
+            <h2>Disney </h2>
+            <p class="meta">
+                Category: Visualization | Type: OTHER PROJECT 
+            </p>
+
+            <figure class="main-media">
+                <img src="img/disney_thumb.jpg" alt="-">
+                <figcaption>Photo by Craig Adderley</figcaption>
+            </figure>
+            
+            <section class="narrative">
+                <h3>เมื่อพูดถึงดิสนีย์ แล้วจะนึกถึง...?</b></h3>
+                <p>
+                    &emsp;&emsp;สำหรับผมแล้ว เมื่อพูดถึงดิสนีย์ ผมจะนึกความทรงจำในวัยเด็ก ความสดใส ความเยาว์วัย และความฝันที่ได้โลดแล่นออกมาผ่านตัวละครที่มีลักษณะนิสัยโดดเด่นไม่เหมือนใคร
+                    และภาพแอนิเมชันสีสันงดงามอลังการ การที่ผมเติบโตมากับการ์ตูนดิสนีย์หลาย ๆ เรื่อง ไม่ว่าจะเป็น Cars, Toy Story หรือชุดซีรีส์เจ้าหญิงดิสนีย์อย่าง Rapunzel หรือ Elza
+                    ทำให้ภาพจำของคำว่าดิสนีย์ของผมล้วนเปี่ยมไปด้วยความเยาว์วัย 
+                    <br><br>&emsp;&emsp;ด้วยเหตุนี้เองผมจึงรู้สึกประหลาดใจเมื่อไปเจอข้อมูลชุดหนึ่งบน Kaggle ที่รวบรวมสื่อของดิสนีย์ไว้มากมาย และได้พบว่าดิสนีย์เองก็มีเนื้อหาที่เด็กจำเป็นต้องได้รับคำแนะนำ (PG-13, PG-14) อยู่ไม่น้อยเช่นกัน
+                    นั่นทำให้ผมเกิดคำถามขึ้นมาว่า "แท้จริงแล้วสื่อส่วนใหญ่ของดิสนีย์มีลักษณะเป็นอย่างไรนะ สื่อสำหรับเด็กจะมีมากอย่างที่ผมเคยคิดไว้หรือเปล่า" ผมจึงได้ทำการดาวน์โหลดชุดข้อมูลดังกล่าว และรีบหาคำตอบให้กับตัวเองทันที
+                    
+                    <figure class="inline-graphic">
+                    <img src="img/snip_disney.jpg" alt="ภาพตัวอย่างแนภูมิที่ได้จากการวิเคราะห์ข้อมูลดิสนีย์">
+                    <figcaption>ภาพตัวอย่างผลการวิเคราะห์ข้อมูลบางส่วนจากชุดข้อมูลดิสนีย์ ที่ได้มาจาก Kaggle</figcaption>
+                    </figure>
+                </p>
+
+                <h3>การใช้ SQL และ Visualization เพื่อหาคำตอบที่ซ่อนอยู่</h3>
+
+                <p> &emsp;&emsp;จากข้อสงสัยที่เกิดขึ้น นำไปสู่การตั้งคำถาม ผมจึงได้ใช้ SQL ในการสืบค้นข้อมูลในชุดข้อมูลและหาคำตอบของคำถามที่ว่า
+                    "ดิสนีย์มีสื่อสำหรับเด็กมากน้อยแค่ไหน และสื่อแบบไหนระหว่างเด็กและวัยรุ่นที่ได้รับความนิยมมากกว่า" ทั้งในแง่ของคุณภาพและปริมาณ ไม่ว่าจะเป็นคะแนนเฉลี่ยจากเว็บไซต์รีวิวอย่าง Metascore และ IMDB การได้รับรางวัลสื่อ หรือจำนวนสื่อแต่ละประเภทที่ผลิตในแต่ละปี
+                    <br><br> &emsp;&emsp; ซึ่งผมได้พบข้อสังเกตที่น่าสนใจว่าแม้จำนวนสื่อสำหรับเด็กจะมีมากกว่าสื่อสำหรับวัยรุ่นกว่าเท่าตัว แต่รางวัลที่ได้รับกลับมีจำนวนน้อยกว่าสื่อวัยรุ่นเป็นอย่างมาก และแม้ว่าในส่วนของคะแนนเฉลี่ยจากเว็บไซต์รีวิวนั้นพบว่าแตกต่างกันไม่มากนัก
+                    แต่สื่อสำหรับวัยรุ่นมีแนวโน้มที่จะมีการผลิตมากกว่าอย่างชัดเจน ซึ่งอาจเป็นผลมาจากการที่สื่อสำหรับวัยรุ่นนั้นสามารถเข้าถึงกลุ่มผู้ชมได้กว้างกว่า และมีผลงานที่ดีจากการได้รับรางวัลมากมายตามมา
+                    ถึงอย่างนั้น หากพิจารณาสื่อรายเรื่องแล้วพบว่าสื่อสำหรับเด็กหลายเรื่องก็มีคะแนนเฉลี่ยในเว็บไซต์รีวิวที่สูงกว่า และสูงที่สุดในทั้งสองแพลตฟอร์มอีกด้วย
+                    <br><br> &emsp;&emsp;ผมจึงได้นำข้อสังเกตเหล่านี้มาสร้างเป็น infographic ที่สื่อสารข้อมูลที่ค้นพบออกมาในรูปแบบของกราฟแท่ง กราฟวงกลม กราฟเส้น โดยใช้โปรแกรม Tableau Public เพื่อให้สามารถสื่อสารข้อมูลที่ค้นพบออกมาได้อย่างชัดเจนมากยิ่งขึ้น
+                    พร้อมทั้งยังมีตัวกรองที่ช่วยให้สามารถพิจารณาเลือกดูแนวโน้มของสื่อแต่ละประเภทในช่วงปีต่าง ๆ ได้สะดวกมากยิ่งขึ้น
+                
+                </p>
+                
+
+            </section>
+            <section id="data-viz">
+                <h2 class="section-title">Data Visualizations</h2>
+                <div class='tableauPlaceholder' id='viz1768460458843' style='position: relative'><noscript><a href='#'><img alt='Dashboard 5 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;DisneyTableau_17684286057650&#47;Dashboard5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DisneyTableau_17684286057650&#47;Dashboard5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;DisneyTableau_17684286057650&#47;Dashboard5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='th-TH' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1768460458843');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='900px';vizElement.style.height='1227px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='900px';vizElement.style.height='1227px';} else { vizElement.style.width='100%';vizElement.style.height='2377px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz123456789');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                        else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                        else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kaniinan. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
